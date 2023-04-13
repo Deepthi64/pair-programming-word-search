@@ -35,4 +35,64 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+  it("should return true if the word is horizontal", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+  it("should return true if the word is vertical", function() {
+    const result = wordSearch([
+      ['A', 'W', 'D', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'E', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'E', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'P', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'T', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'H', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'I', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'DEEPTHI')
+
+    assert.isTrue(result);
+  });
+  it("should return false if the word is undefined", function() {
+    const result = wordSearch([
+      ['A', 'W', 'D', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'E', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'E', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'P', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'T', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'H', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'I', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], undefined)
+
+    assert.isFalse(result);
+  });
+  it("should return false if the type is not a string", function() {
+    const result = wordSearch([
+      ['A', 'W', 'D', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'E', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'E', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'P', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'T', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'H', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'I', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], null)
+
+  assert.isFalse(result);
+  });
 });
